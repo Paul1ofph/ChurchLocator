@@ -75,7 +75,7 @@ const Navbar = () => {
       {/* Navigation Links */}
       <ul className={`
           ${isOpen ? "flex" : "hidden"}
-           menu-wrapper`}
+           menu-wrapper `}
            >
         {NAV.map((item) => (
           <li key={item.id} className='menu-item'>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
+import { API_PATHS } from '../../utils/apiPaths';
 
 // const API_KEY = '353fa2ec998b49b49827ed166233d90e';
 
@@ -15,6 +16,7 @@ const News = () => {
         console.error();
       })
   }, [])
+
 
   const newsList = news.map(({author, title, description, url, urlToImage, publishedAt, content}) => {
   return (
