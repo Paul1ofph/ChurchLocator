@@ -98,10 +98,6 @@ const HarryPotter = () => {
         </ul>
     </div>
 
-    <Hover 
-    thumbnail={image}
-    videoSrc={video1}
-    />
     </>
   );
 };

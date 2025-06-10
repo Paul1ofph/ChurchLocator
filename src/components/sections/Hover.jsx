@@ -8,24 +8,12 @@ const Hover = ({ thumbnail, videoSrc }) => {
 
   const handleMouseEnter = () => {
     setShowVideo(true);
-    setIsLoading(true); // Start showing loader
+    setIsLoading(true);
   };
 
-  const handleCanPlay = () => {
-    const video = videoRef.current;
-    if (video) {
-      video
-        .play()
-        .then(() => {
-          setIsVideoReady(true);
-          setIsLoading(false); // Hide loader once playing
-        })
-        .catch((err) => {
-          console.error("Video play failed:", err);
-          setIsLoading(false);
-          setShowVideo(false);
-        });
-    }
+  const handlePlaying = () => {
+    setIsLoading(false);
+    setIsVideoReady(true);
   };
 
   const handleMouseLeave = () => {
@@ -41,7 +29,7 @@ const Hover = ({ thumbnail, videoSrc }) => {
 
   return (
     <div
-      className="relative w-[300px] h-[170px] rounded-lg overflow-hidden shadow-lg cursor-pointer"
+      className="relative w-full h-full overflow-hidden"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -49,7 +37,7 @@ const Hover = ({ thumbnail, videoSrc }) => {
       <img
         src={thumbnail}
         alt="Thumbnail"
-        className={`absolute w-full h-full object-cover transition-opacity duration-300 ${
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
           isVideoReady ? "opacity-0" : "opacity-100"
         }`}
       />
@@ -61,14 +49,15 @@ const Hover = ({ thumbnail, videoSrc }) => {
         </div>
       )}
 
-      {/* Video - load & show only on hover */}
+      {/* Video */}
       {showVideo && (
         <video
           ref={videoRef}
           muted
           loop
-          className="absolute w-full h-full object-cover z-10"
-          onCanPlay={handleCanPlay}
+          autoPlay
+          className="absolute inset-0 w-full h-full object-cover z-10"
+          onPlaying={handlePlaying}
         >
           <source src={videoSrc} type="video/mp4" />
         </video>

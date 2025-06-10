@@ -25,7 +25,7 @@ const News = () => {
   return (
     <>
     <section className='p-3'>
-        <div className='card-image relative'>
+        <div className='card-image relative aspect-video'>
           <Hover 
           thumbnail={urlToImage}
           videoSrc={video1}
