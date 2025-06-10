@@ -39,7 +39,7 @@ const News = () => {
           <p>{description}</p> <br />
           <hr className='text-black'/>
           <p className='mt-3'><strong>Author:</strong> {author}</p>
-          <p><strong>Published At:</strong> {new Date(publishedAt).toLocaleDateString()}</p>
+          <p><strong>Published At:</strong> {new Date(publishedAt).toLocaleString()}</p>
           <a href={url} target="_blank" rel="noopener noreferrer">Read more</a>
         </div>
       </div>
