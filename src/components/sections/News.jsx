@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import { API_PATHS } from '../../utils/apiPaths';
+import Hover from './Hover';
+import video1 from "../../assets/images/video.mp4"
+
 
 // const API_KEY = '353fa2ec998b49b49827ed166233d90e';
 
@@ -23,7 +26,11 @@ const News = () => {
     <>
     <section className='p-3'>
         <div className='card-image relative'>
-          <img src={urlToImage} alt={title} />
+          <Hover 
+          thumbnail={urlToImage}
+          videoSrc={video1}
+          />
+          {/* <img src={urlToImage} alt={title} /> */}
           <p className='absolute top-0 right-0 bg-[#0e63b0] text-white p-1'>Technology</p>
         </div>
       <div className='card border border-b-[#0e63b0] border-r-[#0e63b0] border-l-[#0e63b0] rounded-b-md'>
@@ -41,7 +48,7 @@ const News = () => {
   );
   })
   return(<>
-    <h1 className='text-center underline text-2xl font-bold mb-3'>Top Stories</h1>
+    <h1 className='text-center underline text-2xl font-bold mb-3'>Top News Stories</h1>
     <div className='items-container grid grid-cols-1 md:grid-cols-3 gap-1'>
       {newsList}
     </div>

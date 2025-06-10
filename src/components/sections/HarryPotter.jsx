@@ -1,6 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { API_PATHS } from '../../utils/apiPaths';
+import Hover from './Hover';
+import image from "../../assets/images/image.jpg"
+import video1 from "../../assets/images/video.mp4"
 
 const HarryPotter = () => {
   const [books, setBooks] = useState([]);
@@ -94,6 +97,11 @@ const HarryPotter = () => {
             ))}
         </ul>
     </div>
+
+    <Hover 
+    thumbnail={image}
+    videoSrc={video1}
+    />
     </>
   );
 };
