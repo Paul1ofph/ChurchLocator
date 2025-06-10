@@ -10,9 +10,9 @@ function App() {
   return (<>
       <Navbar />
       <Hero />
-      <Glass />
-      <HarryPotter />
       <News />
+      <Glass />
+      <HarryPotter />     
       <Footer />
       </>
   )

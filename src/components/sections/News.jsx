@@ -12,7 +12,7 @@ const News = () => {
 
   useEffect(() => {
     axios.get(
-      "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=353fa2ec998b49b49827ed166233d90e",)
+      "https://newsapi.org/v2/everything?sources=techcrunch&apiKey=353fa2ec998b49b49827ed166233d90e",)
       .then(res => {
         setNews(res.data.articles);
       }).catch((err) => {
@@ -28,7 +28,7 @@ const News = () => {
         <div className='card-image relative aspect-video'>
           <Hover 
           thumbnail={urlToImage}
-          videoSrc={video1}
+          videoSrc={""}
           />
           {/* <img src={urlToImage} alt={title} /> */}
           <p className='absolute top-0 right-0 bg-[#0e63b0] text-white p-1'>Technology</p>
